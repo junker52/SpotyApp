@@ -15,7 +15,7 @@ export class SpotifyService {
   getArtistas(artista: String) {
     const url = `https://api.spotify.com/v1/search?query=${artista}&type=artist&offset=0&limit=20`;
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQAHL1UCW-hRutksbzPvrP1iUwhAIknlDNjowzwAI2hc3-Pf3cqGQs0VN7ksSPmqpFPvFKAR6N9nCOXzz8M'
+      'Authorization': 'Bearer BQCpK0h4Dd8dv__B4g5HeHVWdQhvTzpZYAqGbT-pumGZXCYFp-G6Cp_HKL1T-VnHfSkpCGTpXqaujRc4bNM'
     });
     return this.http.get(url, {headers})
           .map((resp: any)  => {

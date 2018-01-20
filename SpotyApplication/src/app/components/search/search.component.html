@@ -5,12 +5,14 @@
       <input type="text" placeholder="Buscar Artista" class="form-control" [(ngModel)]="termino" (keyup)="buscarArtista()">
     </div>
     <div class="col-md-9">
-      <h3>{{termino}}</h3>
+      <h3 class="text-capitalize">{{termino}}</h3>
       <hr *ngIf="termino.length > 0">
-      <ul class="list-group" >
-        <li *ngFor="let artist of _spotify.artistas" class="list-group-item text-dark">{{artist.name}}</li>
-      </ul>
-
+      <div class="row">
+        <div class="col-md-3 text-center top30 puntero" *ngFor="let artist of _spotify.artistas">
+          <img [src]="artist.images | sinfoto"  class="img-thumbnail">
+          <p class="text-center">{{artist.name}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
