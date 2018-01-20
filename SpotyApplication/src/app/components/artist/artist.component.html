@@ -26,9 +26,10 @@
             <thead class="thead-dark">
               <tr>
                 <th>#</th>
-                <th>Nombre</th>
+                <th class="text-justify">Nombre</th>
                 <th>Popularidad </th>
-                <th>Escuchar</th>
+                <th>Reproducir</th>
+                <th>Abrir</th>
               </tr>
             </thead>
             <tbody>
@@ -37,7 +38,13 @@
                 <td class="text-justify">{{track.name}}</td>
                 <td>{{track.popularity}} %</td>
                 <td>
-                  <a href="{{track.external_urls.spotify}}" class="btn btn-outline-primary" target="_blank">Escuchar</a>                  
+                  <audio controls *ngIf="track.preview_url">
+                    <source src="{{track.preview_url}}">
+                  </audio>
+                  <span class="text-danger" *ngIf="!track.preview_url">Audio no disponible</span>
+                </td>
+                <td>
+                  <a href="{{track.external_urls.spotify}}" class="btn btn-outline-primary" target="_blank">Abrir</a>                  
                 </td>
               </tr>
             </tbody>
