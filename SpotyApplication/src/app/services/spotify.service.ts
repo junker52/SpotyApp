@@ -25,12 +25,20 @@ export class SpotifyService {
           });
  }
 
+  /**
+  * Llamada a Spotify API para obtener info del artista 
+  * @param id Id del artista
+  */
   getArtista(id: String) {
     const url = `${this.urlSpotify}artists/${id}`;
     const headers = this.getHeader();
     return this.http.get(url, {headers});
   }
 
+  /**
+   * Llamada a la API de Spotify para recuperar los top tracks del artista
+   * @param id Id del artista
+   */
   getTopTracks(id: String) {
     const url = `${this.urlSpotify}artists/${id}/top-tracks?country=US`;
     const headers = this.getHeader();
