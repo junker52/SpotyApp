@@ -22,9 +22,7 @@ export class SearchComponent {
       return;
     } else {
       this._spotify.getArtistas(this.termino)
-    .subscribe(resp => {
-      console.log(resp);
-    });
+    .subscribe();
     }
   }
 

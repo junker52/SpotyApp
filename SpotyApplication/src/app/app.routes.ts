@@ -8,7 +8,9 @@ const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'search', component: SearchComponent },
     { path: 'artist/:id', component: ArtistComponent },
-    { path: '', pathMatch: 'full', redirectTo: 'home' }
+    { path: '', pathMatch: 'full', redirectTo: 'home' },
+    // Route para gestionar cualquier ruta diferente
+    { path: '**', pathMatch: 'full', component: HomeComponent }
 ];
 
 export const appRouting = RouterModule.forRoot(routes, { useHash: true});
